@@ -1,103 +1,96 @@
-import Image from "next/image";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="font-sans text-gray-900">
+      {/* Navbar */}
+       <nav className="flex items-center justify-between p-4 shadow-md">
+      {/* Left: Hamburger */}
+      <button className="space-y-1">
+        <span className="block w-6 h-0.5 bg-gray-800"></span>
+        <span className="block w-6 h-0.5 bg-gray-800"></span>
+        <span className="block w-6 h-0.5 bg-gray-800"></span>
+      </button>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Right: Name */}
+      <div className="text-lg font-bold">
+        Jessica De-Paz
+      </div>
+    </nav>
+
+      {/* Hero / Intro */}
+      <section className="h-screen flex flex-col justify-center items-center text-center bg-gray-50">
+        <h1 className="text-4xl font-bold mb-4">Hi, I'm Jessica</h1>
+        <p className="text-lg max-w-xl">
+          Computer Science student passionate about building software, leading projects, and creating impactful user experiences.
+        </p>
+      </section>
+
+      {/* About Me */}
+      <section id="about" className="max-w-4xl mx-auto py-16 px-6">
+        <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+        <p>
+          [Write a short bio here]
+        </p>
+      </section>
+
+      {/* Education */}
+      <section id="education" className="max-w-4xl mx-auto py-16 px-6 bg-gray-100 rounded-lg">
+        <h2 className="text-2xl font-semibold mb-4">Education</h2>
+        <ul className="space-y-2">
+          <li>
+            <strong>Florida International University</strong> – B.A. in Computer Science (Expected July 2025)
+          </li>
+          {/* Add more schools here */}
+        </ul>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="max-w-4xl mx-auto py-16 px-6">
+        <h2 className="text-2xl font-semibold mb-4">Projects</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-4 border rounded-lg shadow-sm">
+            <h3 className="font-semibold">Rent Radar</h3>
+            <p className="text-sm">A platform to reveal hidden rental fees using Firebase & React.</p>
+          </div>
+          <div className="p-4 border rounded-lg shadow-sm">
+            <h3 className="font-semibold">TherapAI</h3>
+            <p className="text-sm">AI-driven transcript summarization for therapy sessions.</p>
+          </div>
+          {/* Add more projects */}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+      </section>
+
+      {/* Experience */}
+      <section id="experience" className="max-w-4xl mx-auto py-16 px-6 bg-gray-100 rounded-lg">
+        <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+        <ul className="space-y-4">
+          <li>
+            <strong>Puzo Family Law Firm</strong> – Receptionist / Junior Paralegal  
+            <span className="block text-sm text-gray-600">March 2022 – Jan 2023</span>
+            <p className="text-sm">Managed office calendar, automated billing, and handled client communication.</p>
+          </li>
+          {/* Add more roles */}
+        </ul>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="max-w-4xl mx-auto py-16 px-6 text-center">
+        <h2 className="text-2xl font-semibold mb-4">Contact</h2>
+        <p className="mb-4">Let’s connect! You can reach me at:</p>
+        <a href="mailto:jessica@email.com" className="text-blue-600 underline">
+          jessica@email.com
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className="mt-4 flex justify-center gap-6">
+          <a href="https://github.com/yourusername" target="_blank" className="hover:text-gray-700">GitHub</a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" className="hover:text-gray-700">LinkedIn</a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center py-6 text-sm text-gray-500">
+        © {new Date().getFullYear()} Jessica De-Paz. All rights reserved.
       </footer>
-    </div>
-  );
+    </main>
+  )
 }
